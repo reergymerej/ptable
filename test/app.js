@@ -54,3 +54,19 @@ describe('looking up elements', function () {
     ]);
   });
 });
+
+describe('caching', function () {
+  it('should cache lookups', function () {
+    var start, first, second;
+
+    start = process.hrtime()[1];
+    app(3);
+    first = process.hrtime()[1] - start;
+
+    start = process.hrtime()[1];
+    app(3);
+    second = process.hrtime()[1] - start;
+
+    will(second).beLessThan(first);
+  });
+});
