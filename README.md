@@ -14,11 +14,16 @@ periodicTable('Vanadium');
 periodicTable('Cl');
 // { number: 17, weight: 35.453, name: 'Chlorine', symbol: 'Cl' }
 
+// multiple results are returned as an array
 periodicTable(98);
 // [
 //   { number: 43, weight: 98, name: 'Technetium', symbol: 'Tc' },
 //   { number: 98, weight: 251, name: 'Californium', symbol: 'Cf' }
 // ]
+
+// matching is case-insensitive
+periodicTable('kr');
+// { number: 36, weight: 83.8, name: 'Krypton', symbol: 'Kr' }
 ```
 
 data courtesy of [Israel Science and Technology Homepage](http://www.science.co.il/PTelements.asp)
