@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/reergymerej/periodic-table.svg)](https://travis-ci.org/reergymerej/periodic-table)
 
 It's the Periodic Table of Elements!
 
