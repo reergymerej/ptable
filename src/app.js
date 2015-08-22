@@ -2,6 +2,8 @@
 
 var elements = require('./elements.js');
 
+var cache = {};
+
 var isMatch = function (element, query) {
   var found = false;
   var compare = function (value) {
@@ -24,19 +26,22 @@ var isMatch = function (element, query) {
 };
 
 var lookup = function (query) {
-  var matches = elements.filter(function (element) {
-    return isMatch(element, query);
-  });
+  var result = cache[query];
+  var matches;
+  
+  if (!result) {
+    matches = elements.filter(function (element) {
+      return isMatch(element, query);
+    });
 
-  var result;
-
-  if (matches.length === 1) {
-    result = matches[0];
-  } else if (matches.length > 1) {
-    result = matches;
+    if (matches.length === 1) {
+      result = matches[0];
+    } else if (matches.length > 1) {
+      result = matches;
+    }
   }
 
-  return result;
+  return (cache[query] = result);
 };
 
 lookup.version = '0.0.1';
