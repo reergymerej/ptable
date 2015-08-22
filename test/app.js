@@ -19,6 +19,11 @@ describe('looking up elements', function () {
     will(element.name).be('Chlorine');
   });
 
+  it('should find Chlorine by "cL"', function () {
+    var element = app('Cl');
+    will(element.name).be('Chlorine');
+  });
+
   it('should find Manganese by "Manganese"', function () {
     var element = app('Manganese');
     will(element.name).be('Manganese');
@@ -27,5 +32,25 @@ describe('looking up elements', function () {
   it('should return undefined for non-existant symbols"', function () {
     var element = app('xyz');
     will(element).be(undefined);
+  });
+
+  it('should find Fermium by weight (257)', function () {
+    var element = app(257);
+    will(element.name).be('Fermium');
+  });
+
+  it('should find by atomic number', function () {
+    var element = app(106);
+    will(element).beLike(
+      { number: 106, weight: 266, name: 'Seaborgium', symbol: 'Sg' }
+    );
+  });
+
+  it('should return an array of matches if there were multiple', function () {
+    var element = app(98);
+    will(element).beLike([
+      { number: 43, weight: 98, name: 'Technetium', symbol: 'Tc' },
+      { number: 98, weight: 251, name: 'Californium', symbol: 'Cf' },
+    ]);
   });
 });

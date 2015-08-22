@@ -2,12 +2,29 @@
 
 var elements = require('./elements.js');
 
-var lookup = function (query) {
+var isMatch = function (element, query) {
+  var found = false;
+  Object.keys(element).every(function (key) {
+    found = element[key] === query;
+    return !found;
+  });
+  return found;
+};
 
-  return elements.filter(function (element) {
-    return element.name === query ||
-      element.symbol === query;
-  })[0];
+var lookup = function (query) {
+  var matches = elements.filter(function (element) {
+    return isMatch(element, query);
+  });
+
+  var result;
+
+  if (matches.length === 1) {
+    result = matches[0];
+  } else if (matches.length > 1) {
+    result = matches;
+  }
+
+  return result;
 };
 
 lookup.version = '0.0.1';
