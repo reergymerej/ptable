@@ -4,8 +4,20 @@ var elements = require('./elements.js');
 
 var isMatch = function (element, query) {
   var found = false;
+  var compare = function (value) {
+    if (typeof value === 'string') {
+      value = value.toLowerCase();
+    }
+
+    return value === query;
+  };
+
+  if (typeof query === 'string') {
+    query = query.toLowerCase();
+  }
+
   Object.keys(element).every(function (key) {
-    found = element[key] === query;
+    found = compare(element[key]);
     return !found;
   });
   return found;

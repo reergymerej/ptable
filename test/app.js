@@ -20,7 +20,7 @@ describe('looking up elements', function () {
   });
 
   it('should find Chlorine by "cL"', function () {
-    var element = app('Cl');
+    var element = app('cL');
     will(element.name).be('Chlorine');
   });
 
