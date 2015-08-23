@@ -2,6 +2,8 @@
 
 Look up elements by atomic number, weight, name, or symbol.
 
+###Usage
+
 ```js
 var pTable = require('ptable');
 
@@ -26,4 +28,17 @@ pTable('kr');
 // { number: 36, weight: 83.8, name: 'Krypton', symbol: 'Kr' }
 ```
 
+###Installation
+
+```sh
+npm install ptable
+```
+
+###Run Tests
+
+```sh
+npm test
+```
+
+---
 data courtesy of [Israel Science and Technology Homepage](http://www.science.co.il/PTelements.asp)
