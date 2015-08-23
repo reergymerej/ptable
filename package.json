@@ -9,5 +9,29 @@
     "grunt-mocha-test": "^0.12.7",
     "mocha": "^2.2.5",
     "willy": "^1.0.1"
-  }
+  },
+  "name": "ptable",
+  "description": "searchable periodic table of elements",
+  "version": "0.0.1",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reergymerej/ptable.git"
+  },
+  "keywords": [
+    "periodic table of elements",
+    "periodic table",
+    "searchable periodic table",
+    "chemistry"
+  ],
+  "author": "Jeremy Greer <jeremy.greer.atl@gmail.com> (http://jeremygreer.herokuapp.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reergymerej/ptable/issues"
+  },
+  "homepage": "https://github.com/reergymerej/ptable#readme"
 }
