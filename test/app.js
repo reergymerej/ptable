@@ -1,7 +1,7 @@
 'use strict';
 
 var will = require('willy').will;
-var app = require('../src/app.js');
+var app = require('../app.js');
 
 describe('sanity', function () {
   it('should load', function () {
