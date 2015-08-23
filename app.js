@@ -1,49 +1,20 @@
 'use strict';
 
 var elements = require('./elements.js');
+var arrayMiner = require('array-miner');
 
-var cache = {};
-
-var isMatch = function (element, query) {
-  var found = false;
-  var compare = function (value) {
-    if (typeof value === 'string') {
-      value = value.toLowerCase();
-    }
-
-    return value === query;
-  };
-
-  if (typeof query === 'string') {
-    query = query.toLowerCase();
-  }
-
-  Object.keys(element).every(function (key) {
-    found = compare(element[key]);
-    return !found;
-  });
-  return found;
-};
+arrayMiner.add(elements);
 
 var lookup = function (query) {
-  var result = cache[query];
-  var matches;
-  
-  if (!result) {
-    matches = elements.filter(function (element) {
-      return isMatch(element, query);
-    });
+  var results = arrayMiner.find(query);
 
-    if (matches.length === 1) {
-      result = matches[0];
-    } else if (matches.length > 1) {
-      result = matches;
-    }
+  if (results.length <= 1) {
+    results = results[0];
   }
 
-  return (cache[query] = result);
+  return results;
 };
 
-lookup.version = '0.0.1';
+lookup.version = '0.0.2';
 
 module.exports = lookup;
