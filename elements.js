@@ -110,4 +110,13 @@ module.exports = [
 	{ number: 107, weight: 264, name: 'Bohrium', symbol: 'Bh' },
 	{ number: 108, weight: 277, name: 'Hassium', symbol: 'Hs' },
 	{ number: 109, weight: 268, name: 'Meitnerium', symbol: 'Mt' },
+	{ number: 110, weight: 281, name: 'Darmstadtium', symbol: 'Ds' },
+	{ number: 111, weight: 281, name: 'Roentgenium', symbol: 'Rg' },
+	{ number: 112, weight: 285, name: 'Copernicium', symbol: 'Cn' },
+	{ number: 113, weight: 286, name: 'Ununtrium', symbol: 'Uut' },
+	{ number: 114, weight: 289, name: 'Flerovium', symbol: 'Fl' },
+	{ number: 115, weight: 289, name: 'Ununpentium', symbol: 'Uup' },
+	{ number: 116, weight: 293, name: 'Livermorium', symbol: 'Lv' },
+	{ number: 117, weight: 294, name: 'Ununseptium', symbol: 'Uus' },
+	{ number: 118, weight: 294, name: 'Ununoctium', symbol: 'Uuo' }
 ];
